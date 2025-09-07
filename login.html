@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - Health & Fitness Tracker</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#98a0b3;--accent:#6ee7b7;--accent-2:#60a5fa}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071129 0%, #071a2a 100%);color:#e6eef8;min-height:100vh;}
+    header{background:#0b1220;display:flex;justify-content:space-between;align-items:center;padding:15px 30px;box-shadow:0 2px 6px rgba(0,0,0,0.6);}
+    header .logo{font-size:20px;font-weight:700;color:var(--accent);}
+    nav a{color:var(--accent-2);margin-left:20px;text-decoration:none;font-weight:600;transition:0.3s}
+    nav a:hover{color:var(--accent)}
+    .content{display:flex;align-items:center;justify-content:center;padding:40px}
+    .login-box{background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));padding:40px;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6);width:100%;max-width:420px;text-align:center}
+    h2{color:var(--accent);margin-bottom:20px}
+    input{width:100%;padding:12px;margin:10px 0;border:none;border-radius:10px;background:#1a2335;color:#e6eef8}
+    input:focus{outline:2px solid var(--accent-2)}
+    button{width:100%;padding:12px;background:var(--accent);border:none;border-radius:10px;font-weight:600;color:#04201a;cursor:pointer;margin-top:14px}
+    button:hover{opacity:0.9}
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">FitLife</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+
+  <div class="content">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form action="dashboard.html" method="get">
+  <input type="text" placeholder="Username" required>
+  <input type="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+
+    </div>
+  </div>
+</body>
+</html>

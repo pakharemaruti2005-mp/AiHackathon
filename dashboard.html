@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dashboard - Health & Fitness Tracker</title>
+<style>
+:root {
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#cbd5e1;
+  --accent:#6ee7b7;
+  --accent-2:#60a5fa;
+  --text:#e6eef8;
+  --button-text:#04142e;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg:#f3f4f6;
+  --card:#ffffff;
+  --muted:#374151;
+  --accent:#10b981;
+  --accent-2:#2563eb;
+  --text:#111827;
+  --button-text:#ffffff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body {
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background:var(--card);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.6);
+}
+header .logo {
+  font-size:20px;
+  font-weight:700;
+  color:var(--accent);
+}
+nav a {
+  color:var(--accent-2);
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+nav a:hover {color:var(--accent);}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background:var(--accent);
+  color:var(--button-text);
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  margin-left:20px;
+  transition:0.3s;
+}
+.theme-toggle:hover {opacity:0.85;}
+
+.container{flex:1;padding:30px;max-width:1200px;margin:0 auto;}
+h1{color:var(--accent);margin-bottom:20px;text-align:center;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-bottom:30px;}
+.card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6);position:relative;}
+.card h2{font-size:18px;color:var(--accent-2);margin-bottom:10px;}
+.card p{color:var(--muted);margin-bottom:6px;}
+.edit-btn{position:absolute;top:15px;right:15px;background:var(--accent-2);color:var(--button-text);padding:4px 10px;border-radius:8px;font-size:12px;cursor:pointer;border:none;}
+.edit-btn:hover{opacity:0.85;}
+.progress{background:var(--card);padding:20px;border-radius:16px;margin-bottom:30px;}
+.progress h2{color:var(--accent-2);margin-bottom:10px;}
+.bar{height:16px;border-radius:8px;background:#1e293b;overflow:hidden;margin-bottom:10px;}
+.bar span{display:block;height:100%;background:var(--accent);width:0;}
+.bar-label{font-size:14px;color:var(--muted);margin-bottom:8px;}
+.actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:15px;}
+.actions a{background:var(--accent-2);color:var(--button-text);padding:10px 18px;border-radius:12px;text-decoration:none;font-weight:600;transition:0.3s;}
+.actions a:hover{opacity:0.85;}
+.tips{background:var(--card);border-radius:16px;padding:20px;margin-top:30px;}
+.tips h2{color:var(--accent-2);margin-bottom:10px;}
+.tips ul{margin-left:18px;color:var(--muted);}
+.tips li{margin-bottom:6px;}
+.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
+.modal-content{background:var(--card);padding:20px;border-radius:16px;width:300px;box-shadow:0 6px 18px rgba(0,0,0,0.8);}
+.modal-content h3{color:var(--accent);margin-bottom:10px;}
+.modal-content label{display:block;margin:8px 0 4px;}
+.modal-content input{width:100%;padding:8px;border-radius:8px;border:none;margin-bottom:10px;}
+.modal-content button{background:var(--accent);border:none;padding:8px 14px;border-radius:10px;font-weight:600;cursor:pointer;margin-right:10px;}
+.modal-content .cancel{background:#f87171;color:#000;}
+</style>
+</head>
+<body data-theme="dark">
+<header>
+  <div class="logo">FitLife Dashboard</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="login.html">Logout</a>
+    <button class="theme-toggle" id="theme-btn">☀ Light</button>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Your Daily Overview</h1>
+  <div class="cards">
+    <div class="card" data-type="meals">
+      <h2>🍴 Meals</h2>
+      <p>Calories Today: <strong id="calories">1850</strong> kcal</p>
+      <p>Goal: <strong id="caloriesGoal">2200</strong> kcal</p>
+      <p>Proteins: <strong id="proteins">95</strong> g</p>
+      <button class="edit-btn">Edit</button>
+    </div>
+    <div class="card" data-type="workouts">
+      <h2>🏋 Workouts</h2>
+      <p>Workout Time: <strong id="workoutTime">45</strong> min</p>
+      <p>Goal: <strong id="workoutGoal">60</strong> min</p>
+      <p>Steps: <strong id="steps">7200</strong></p>
+      <button class="edit-btn">Edit</button>
+    </div>
+    <div class="card" data-type="sleep">
+      <h2>😴 Sleep</h2>
+      <p>Last Night: <strong id="sleep">7</strong> hrs</p>
+      <p>Goal: <strong id="sleepGoal">8</strong> hrs</p>
+      <button class="edit-btn">Edit</button>
+    </div>
+  </div>
+
+  <!-- Progress Section -->
+  <div class="progress">
+    <h2>Daily Goals Progress</h2>
+    <div class="bar-label">Calories</div>
+    <div class="bar"><span id="caloriesBar"></span></div>
+    <div class="bar-label">Workout</div>
+    <div class="bar"><span id="workoutBar"></span></div>
+    <div class="bar-label">Sleep</div>
+    <div class="bar"><span id="sleepBar"></span></div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="actions">
+    <a href="#">+ Add Meal</a>
+    <a href="#">+ Add Workout</a>
+    <a href="#">+ Add Sleep</a>
+  </div>
+
+  <!-- AI Health Tips -->
+  <div class="tips">
+    <h2>Today’s AI Suggestions</h2>
+    <ul>
+      <li>Drink at least 2.5L water throughout the day.</li>
+      <li>Take a 10-min walk after lunch.</li>
+      <li>Avoid screen 30 mins before sleep.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="editModal">
+  <div class="modal-content">
+    <h3>Edit Data</h3>
+    <form id="editForm">
+      <div id="formFields"></div>
+      <button type="submit">Save</button>
+      <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const editButtons=document.querySelectorAll(".edit-btn");
+const modal=document.getElementById("editModal");
+const formFields=document.getElementById("formFields");
+let currentType="";
+
+editButtons.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    currentType=btn.parentElement.dataset.type;
+    openModal(currentType);
+  });
+});
+
+function openModal(type){
+  formFields.innerHTML="";
+  if(type==="meals"){
+    formFields.innerHTML=`
+      <label>Calories</label>
+      <input type="number" id="editCalories" value="${document.getElementById("calories").innerText}">
+      <label>Goal Calories</label>
+      <input type="number" id="editCaloriesGoal" value="${document.getElementById("caloriesGoal").innerText}">
+      <label>Proteins (g)</label>
+      <input type="number" id="editProteins" value="${document.getElementById("proteins").innerText}">
+    `;
+  } else if(type==="workouts"){
+    formFields.innerHTML=`
+      <label>Workout Time (min)</label>
+      <input type="number" id="editWorkoutTime" value="${document.getElementById("workoutTime").innerText}">
+      <label>Goal Workout (min)</label>
+      <input type="number" id="editWorkoutGoal" value="${document.getElementById("workoutGoal").innerText}">
+      <label>Steps</label>
+      <input type="number" id="editSteps" value="${document.getElementById("steps").innerText}">
+    `;
+  } else if(type==="sleep"){
+    formFields.innerHTML=`
+      <label>Sleep Hours</label>
+      <input type="number" id="editSleep" value="${document.getElementById("sleep").innerText}">
+      <label>Goal Sleep (hrs)</label>
+      <input type="number" id="editSleepGoal" value="${document.getElementById("sleepGoal").innerText}">
+    `;
+  }
+  modal.style.display="flex";
+}
+
+function closeModal(){ modal.style.display="none"; }
+
+document.getElementById("editForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  if(currentType==="meals"){
+    document.getElementById("calories").innerText=document.getElementById("editCalories").value;
+    document.getElementById("caloriesGoal").innerText=document.getElementById("editCaloriesGoal").value;
+    document.getElementById("proteins").innerText=document.getElementById("editProteins").value;
+  } else if(currentType==="workouts"){
+    document.getElementById("workoutTime").innerText=document.getElementById("editWorkoutTime").value;
+    document.getElementById("workoutGoal").innerText=document.getElementById("editWorkoutGoal").value;
+    document.getElementById("steps").innerText=document.getElementById("editSteps").value;
+  } else if(currentType==="sleep"){
+    document.getElementById("sleep").innerText=document.getElementById("editSleep").value;
+    document.getElementById("sleepGoal").innerText=document.getElementById("editSleepGoal").value;
+  }
+  updateProgress();
+  closeModal();
+});
+
+// Close modal on outside click
+window.addEventListener("click",(e)=>{if(e.target===modal) closeModal();});
+
+// Update progress bars
+function updateProgress(){
+  const caloriesPercent = Math.min(100, (document.getElementById("calories").innerText / document.getElementById("caloriesGoal").innerText)*100);
+  const workoutPercent = Math.min(100, (document.getElementById("workoutTime").innerText / document.getElementById("workoutGoal").innerText)*100);
+  const sleepPercent = Math.min(100, (document.getElementById("sleep").innerText / document.getElementById("sleepGoal").innerText)*100);
+  document.getElementById("caloriesBar").style.width = caloriesPercent + "%";
+  document.getElementById("workoutBar").style.width = workoutPercent + "%";
+  document.getElementById("sleepBar").style.width = sleepPercent + "%";
+}
+
+// Initialize progress bars
+updateProgress();
+
+// Theme Toggle
+const themeBtn=document.getElementById("theme-btn");
+const body=document.body;
+
+themeBtn.addEventListener("click",()=>{
+  if(body.getAttribute("data-theme")==="dark"){
+    body.setAttribute("data-theme","light");
+    themeBtn.textContent="🌙 Dark";
+  } else {
+    body.setAttribute("data-theme","dark");
+    themeBtn.textContent="☀ Light";
+  }
+});
+</script>
+</body>
+</html>

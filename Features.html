@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Features Dashboard</title>
+    <style>
+        /* General Body and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            background-color: #ecf0f1;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .nav-menu a.active, .nav-menu a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Main Content and Pages */
+        .page-content {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Hiding pages by default */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Page specific styling */
+        .chart-placeholder {
+            height: 300px;
+            background-color: #e8e8e8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-top: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>FitLife Features Dashboard</h1>
+    </header>
+
+    <!-- Navigation Menu to switch between pages -->
+    <nav class="nav-menu">
+        <a href="#activity" class="nav-link active" data-page="activity">Activity Tracking</a>
+        <a href="#nutrition" class="nav-link" data-page="nutrition">Nutrition Logging</a>
+        <a href="#workouts" class="nav-link" data-page="workouts">Workout Plans</a>
+        <a href="#sleep" class="nav-link" data-page="sleep">Sleep Monitoring</a>
+    </nav>
+
+    <!-- Main content area where pages are displayed -->
+    <main class="container page-content">
+        <!-- Activity Tracking Page -->
+        <div id="activity" class="page active">
+            <h2>Activity Tracking</h2>
+            <p>Track your daily steps, distance covered, and calories burned. See your progress and stay motivated with clear, visual data.</p>
+            <div style="max-width: 600px; margin: auto;">
+    <canvas id="activityChart" height="250"></canvas>
+</div>
+
+            <h3>Your Daily Stats</h3>
+            <ul class="feature-list">
+                <li>**Steps:** 12,450</li>
+                <li>**Distance:** 8.2 km</li>
+                <li>**Calories Burned:** 650 kcal</li>
+            </ul>
+        </div>
+
+        <!-- Nutrition Logging Page -->
+        <div id="nutrition" class="page">
+            <h2>Nutrition Logging</h2>
+            <p>Log your meals and monitor your nutritional intake to ensure you're meeting your health goals.</p>
+            <h3>Today's Meals</h3>
+            <ul class="feature-list">
+                <li>**Breakfast:** Oatmeal with berries (350 kcal)</li>
+                <li>**Lunch:** Grilled chicken salad (420 kcal)</li>
+                <li>**Dinner:** Lentil soup (300 kcal)</li>
+                <li>**Snack:** Apple (95 kcal)</li>
+            </ul>
+           <div style="max-width: 300px; margin: auto;">
+    <canvas id="nutritionChart"></canvas>
+</div>
+
+        </div>
+
+        <!-- Workout Plans Page -->
+        <div id="workouts" class="page">
+            <h2>Workout Plans</h2>
+            <p>Access pre-built workout routines or create your own custom plans to train effectively.</p>
+            <h3>Current Plan: Beginner Strength</h3>
+            <ul class="feature-list">
+                <li>**Day 1:** Full-body workout (3 sets x 10 reps)</li>
+                <li>**Day 2:** Rest day</li>
+                <li>**Day 3:** Upper body focus (4 sets x 8 reps)</li>
+                <li>**Day 4:** Rest day</li>
+                <li>**Day 5:** Lower body focus (3 sets x 12 reps)</li>
+            </ul>
+        </div>
+
+        <!-- Sleep Monitoring Page -->
+        <div id="sleep" class="page">
+            <h2>Sleep Monitoring</h2>
+            <p>Understand your sleep patterns and improve your rest for better recovery and overall well-being.</p>
+            <h3>Sleep Stats</h3>
+            <ul class="feature-list">
+                <li>**Last Night's Sleep:** 7 hours 45 minutes</li>
+                <li>**Sleep Quality:** Good</li>
+                <li>**Deep Sleep:** 2 hours 10 minutes</li>
+                <li>**Light Sleep:** 5 hours 5 minutes</li>
+            </ul>
+            <div style="max-width: 500px; margin: auto;">
+    <canvas id="sleepChart" height="250"></canvas>
+</div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 FitLife. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle page switching -->
+    <script>
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+        // Get all page elements
+        const pages = document.querySelectorAll('.page');
+
+        // Function to show a specific page and hide all others
+        function showPage(pageId) {
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+        }
+
+        // Add a click event listener to each navigation link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Prevent default link behavior
+                event.preventDefault();
+                
+                // Get the page ID from the data-page attribute
+                const pageId = this.getAttribute('data-page');
+
+                // Remove 'active' class from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                
+                // Add 'active' class to the clicked link
+                this.classList.add('active');
+                
+                // Show the corresponding page
+                showPage(pageId);
+            });
+        });
+       </script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Sleep Chart Data
+        const ctx = document.getElementById('sleepChart').getContext('2d');
+        const sleepChart = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: ['Deep Sleep', 'Light Sleep', 'REM Sleep', 'Awake'],
+                datasets: [{
+                    label: 'Hours',
+                    data: [2.2, 5.0, 0.5, 0.1],
+                    backgroundColor: ['#3498db', '#2ecc71', '#9b59b6', '#e74c3c'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true, position: 'top' },
+                    title: {
+                        display: true,
+                        text: 'Sleep Cycle Breakdown'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Hours' }
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+    // Nutrition Pie Chart
+    const ctxNutri = document.getElementById('nutritionChart').getContext('2d');
+    const nutritionChart = new Chart(ctxNutri, {
+        type: 'pie',
+        data: {
+            labels: ['Protein', 'Carbs', 'Fats'],
+            datasets: [{
+                label: 'Macros',
+                data: [25, 50, 25], // example values in %
+                backgroundColor: ['#3498db', '#2ecc71', '#f1c40f'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: {
+                    display: true,
+                    text: 'Macro Breakdown (Protein / Carbs / Fats)'
+                }
+            }
+        }
+    });
+</script>
+<script>
+    // Activity Line Chart
+    const ctxActivity = document.getElementById('activityChart').getContext('2d');
+    const activityChart = new Chart(ctxActivity, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Steps',
+                data: [8000, 10000, 7500, 12000, 9000, 11000, 12450], // example data
+                borderColor: '#3498db',
+                backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                fill: true,
+                tension: 0.3, // smooth line
+                pointRadius: 4,
+                pointBackgroundColor: '#2980b9'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                title: {
+                    display: true,
+                    text: 'Daily Activity Trends (Steps)'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Steps Count' }
+                },
+                x: {
+                    title: { display: true, text: 'Day of Week' }
+                }
+            }
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>
+
+</body>
+</html>

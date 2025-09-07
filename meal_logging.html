@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Food Schedule</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    header {
+      background: #16a34a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #15803d;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: #22c55e; }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #f59e0b;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .exercise-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+    .exercise-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 250px;
+      text-align: center;
+      padding-bottom: 15px;
+      flex: 1;
+      min-width: 220px;
+    }
+    .exercise-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .exercise-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      text-align: left;
+      margin: 10px 0 0 0;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #16a34a;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Daily Food Schedule</h1>
+</header>
+
+<nav>
+  <a href="#monday">Monday</a>
+  <a href="#tuesday">Tuesday</a>
+  <a href="#wednesday">Wednesday</a>
+  <a href="#thursday">Thursday</a>
+  <a href="#friday">Friday</a>
+  <a href="#saturday">Saturday</a>
+  <a href="#sunday">Sunday</a>
+  <a href="index.html">Home</a>
+</nav>
+
+<!-- MONDAY -->
+<section id="monday">
+  <h2>Monday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Oatmeal Breakfast.jpg" alt="Oatmeal Breakfast">
+      <ul>
+        <li>Oatmeal with bananas & berries</li>
+        <li>Green tea</li>
+        <li>High fiber + energy boost</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Grilled Chicken Lunch.jpg" alt="Grilled Chicken Lunch">
+      <ul>
+        <li>Grilled chicken breast</li>
+        <li>Steamed broccoli</li>
+        <li>Brown rice</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Salmon Dinner">
+      <ul>
+        <li>Baked salmon</li>
+        <li>Quinoa & spinach</li>
+        <li>Lemon dressing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TUESDAY -->
+<section id="tuesday">
+  <h2>Tuesday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Smoothie Breakfast">
+      <ul>
+        <li>Fruit smoothie (banana, spinach, almond milk)</li>
+        <li>Boiled eggs</li>
+        <li>Rich in protein & vitamins</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" alt="Turkey Wrap Lunch">
+      <ul>
+        <li>Whole wheat turkey wrap</li>
+        <li>Avocado & mixed veggies</li>
+        <li>Light & filling</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Pasta Dinne.jpeg" alt="Pasta Dinner">
+      <ul>
+        <li>Whole grain pasta</li>
+        <li>Tomato & basil sauce</li>
+        <li>Grilled vegetables</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WEDNESDAY -->
+<section id="wednesday">
+  <h2>Wednesday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8" alt="Avocado Toast">
+      <ul>
+        <li>Avocado toast with poached egg</li>
+        <li>Fresh orange juice</li>
+        <li>Healthy fats + vitamin C</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Salad Lunch.jpeg" alt="Salad Lunch">
+      <ul>
+        <li>Grilled chicken salad</li>
+        <li>Kale, cucumbers, cherry tomatoes</li>
+        <li>Olive oil dressing</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Stir Fry Dinner">
+      <ul>
+        <li>Vegetable stir-fry</li>
+        <li>Tofu + brown rice</li>
+        <li>Low calorie, high protein</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- THURSDAY -->
+<section id="thursday">
+  <h2>Thursday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8" alt="Greek Yogurt Breakfast">
+      <ul>
+        <li>Greek yogurt with granola</li>
+        <li>Fresh strawberries</li>
+        <li>Calcium + probiotics</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Quinoa Bowl Lunch">
+      <ul>
+        <li>Quinoa bowl</li>
+        <li>Black beans, corn, peppers</li>
+        <li>Lime dressing</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Soup Dinne.jpeg" alt="Soup Dinner">
+      <ul>
+        <li>Lentil soup</li>
+        <li>Whole grain bread</li>
+        <li>Rich in fiber</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FRIDAY -->
+<section id="friday">
+  <h2>Friday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Pancakes Breakfast.jpeg" alt="Pancakes Breakfast">
+      <ul>
+        <li>Whole wheat pancakes</li>
+        <li>Honey + blueberries</li>
+        <li>With a glass of milk</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" alt="Grilled Fish Lunch">
+      <ul>
+        <li>Grilled fish fillet</li>
+        <li>Sweet potato mash</li>
+        <li>Steamed green beans</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" alt="Veggie Pizza Dinner">
+      <ul>
+        <li>Homemade veggie pizza</li>
+        <li>Thin crust</li>
+        <li>Low cheese option</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SATURDAY -->
+<section id="saturday">
+  <h2>Saturday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1546069901-eacef0df6022" alt="Chia Pudding Breakfast">
+      <ul>
+        <li>Chia seed pudding</li>
+        <li>Almond milk + mango</li>
+        <li>High in omega-3</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Veggie Bowl Lunch">
+      <ul>
+        <li>Vegetarian Buddha bowl</li>
+        <li>Brown rice, beans, avocado</li>
+        <li>Colorful & nutritious</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Curry Dinner.jpg" alt="Curry Dinner">
+      <ul>
+        <li>Chicken curry</li>
+        <li>Served with roti</li>
+        <li>Cucumber salad</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SUNDAY -->
+<section id="sunday">
+  <h2>Sunday</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Smoothie Bowl Breakfast">
+      <ul>
+        <li>Smoothie bowl</li>
+        <li>Mixed fruits + nuts</li>
+        <li>Refreshing & colorful</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Grilled Steak Lunch.jpeg" alt="Grilled Steak Lunch">
+      <ul>
+        <li>Lean grilled steak</li>
+        <li>Roasted veggies</li>
+        <li>Quinoa salad</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Soup Dinne.jpeg" alt="Soup Dinner">
+      <ul>
+        <li>Tomato basil soup</li>
+        <li>Whole grain toast</li>
+        <li>Light & warming</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Daily Food Schedule | 
+  <a href="index.html" style="color: #facc15; text-decoration:none; font-weight:bold;">Back to Home</a>
+</footer>
+
+</body>
+</html>

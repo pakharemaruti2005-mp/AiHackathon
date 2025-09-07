@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health & Fitness Tracker - Home</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #d1d5db;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --text: #e6eef8;
+      --button-text: #04201a;
+    }
+
+    /* Light Theme */
+    [data-theme="light"] {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --muted: #374151;
+      --accent: #10b981;
+      --accent-2: #2563eb;
+      --text: #111827;
+      --button-text: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
+    }
+    
+    /* Navbar */
+    header {
+      background: var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    header .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      color: var(--accent-2);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      position: relative;
+    }
+    nav a:hover { color: var(--accent); }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: var(--card);
+      border-radius: 8px;
+      min-width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 14px;
+      margin: 0;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover {
+      background: var(--accent);
+      color: var(--button-text);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--accent);
+      color: var(--button-text);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+    .theme-toggle:hover { opacity: 0.85; }
+
+    /* Content */
+    .content { display:flex; align-items:center; justify-content:center; padding:40px; }
+    .app { width:100%; max-width:1100px; text-align:center; }
+    .app h1 { font-size:28px; margin:0; color:var(--accent); margin-bottom:10px; }
+    .app p { color:var(--muted); margin:0 0 20px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    
+    /* Features */
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:20px 0; }
+    .feature {
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      color:#fff;
+      min-height:180px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:16px;
+      text-align:left;
+    }
+    .feature::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+    }
+    .feature h3, .feature p { position:relative; z-index:1; margin:4px 0; }
+    .feature h3 { color:var(--accent); font-size:18px; }
+    .feature p { font-size:14px; color:#e5e7eb; }
+
+    /* Background Images */
+    .meal { background:url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg') center/cover no-repeat; }
+    .workout { background:url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg') center/cover no-repeat; }
+    .sleep { background:url('https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg') center/cover no-repeat; }
+    .tips { background:url('https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg') center/cover no-repeat; }
+
+    /* Buttons */
+    a.button {
+      display:inline-block;
+      margin:10px;
+      padding:12px 20px;
+      background:var(--accent);
+      color:var(--button-text);
+      font-weight:600;
+      text-decoration:none;
+      border-radius:12px;
+      transition:0.3s;
+    }
+    a.button:hover { opacity:0.85; }
+  </style>
+</head>
+<body data-theme="dark">
+  <header>
+    <div class="logo">FitLife</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="Features.html">Features</a>
+      <button class="theme-toggle" id="theme-btn">☀ Light</button>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="app">
+      <h1>Welcome to Health & Fitness Tracker</h1>
+      <p>Your personal tool to log meals, workouts, and sleep while receiving AI-like health tips.</p>
+      <div class="card">
+        <h2>Why Use This Tracker?</h2>
+        <div class="features">
+          <a href="meal_logging.html" class="feature meal"><h3>🍴 Meal Logging</h3></a>
+          <a href="workouts.html" class="feature workout"><h3>🏋 Workouts</h3></a>
+          <a href="sleep_tracking.html" class="feature sleep"><h3>😴 Sleep Tracking</h3></a>
+          <a href="tips.html" class="feature tips"><h3>💡  Health Tips</h3></a>
+        </div>
+        <a href="dashboard.html" class="button">Go to Dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById("theme-btn");
+    const body = document.body;
+
+    btn.addEventListener("click", () => {
+      if (body.getAttribute("data-theme") === "dark") {
+        body.setAttribute("data-theme", "light");
+        btn.textContent = "🌙 Dark";
+      } else {
+        body.setAttribute("data-theme", "dark");
+        btn.textContent = "☀ Light";
+      }
+    });
+  </script>
+</body>
+</html>

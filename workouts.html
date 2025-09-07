@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Guide</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    header {
+      background: #16a34a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #15803d;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: #3b82f6; }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      color: #f59e0b;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .exercise-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .exercise-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 200px;
+      text-align: center;
+      padding-bottom: 15px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .exercise-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .exercise-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      text-align: left;
+      margin: 10px 0 0 0;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2563eb;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Workout Guide</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#chest">Chest</a>
+  <a href="#triceps">Triceps</a>
+  <a href="#biceps">Biceps</a>
+  <a href="#back">Back</a>
+  <a href="#shoulder">Shoulder</a>
+  <a href="#legs">Legs</a>
+</nav>
+
+
+<section id="chest">
+  <h2>Chest Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Bench press.jpg" alt="Bench Press">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Main: Pectorals</li>
+        <li>Equipment: Barbell</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/incline dumbbell press.jpg" alt="Incline Dumbbell Press">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Focus: Upper chest</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/chest fly.jpg" alt="Chest Fly">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Chest stretch</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/push up.jpg" alt="Push Ups">
+      <ul>
+        <li>3 sets x 15 reps</li>
+        <li>Bodyweight</li>
+        <li>Focus: Chest & Arms</li>
+        <li>Rest: 45 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="triceps">
+  <h2>Triceps Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/tricep dips.jpg" alt="Tricep Dips">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Bodyweight</li>
+        <li>Focus: Triceps</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/skull crushers.jpeg" alt="Skull Crushers">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Equipment: Barbell</li>
+        <li>Focus: Triceps</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/tricep pushdown.jpg" alt="Tricep Pushdown">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Cable</li>
+        <li>Focus: Triceps</li>
+        <li>Rest: 45 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Overhead Extension.webp" alt="Overhead Extension">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbell</li>
+        <li>Focus: Triceps stretch</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="biceps">
+  <h2>Biceps Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Bicep Curl.jpg" alt="Bicep Curl">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Biceps peak</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Hammer Curl.jpeg" alt="Hammer Curl">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Brachialis</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Concentration Curl.jpg" alt="Concentration Curl">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Equipment: Dumbbell</li>
+        <li>Focus: Peak contraction</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Preacher Curl.jpeg" alt="Preacher Curl">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Barbell</li>
+        <li>Focus: Biceps isolation</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="back">
+  <h2>Back Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Pull Ups.webp" alt="Pull Ups">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Bodyweight</li>
+        <li>Focus: Lats</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Deadlift.jpg" alt="Deadlift">
+      <ul>
+        <li>3 sets x 8 reps</li>
+        <li>Equipment: Barbell</li>
+        <li>Focus: Lower back & traps</li>
+        <li>Rest: 120 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Bent Over Row.webp" alt="Bent Over Row">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Equipment: Barbell</li>
+        <li>Focus: Upper back</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Lat Pulldown.jpeg" alt="Lat Pulldown">
+      <ul>Lat Pulldown
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Cable machine</li>
+        <li>Focus: Lats</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="shoulder">
+  <h2>Shoulder Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Overhead Press.jpg" alt="Overhead Press">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Equipment: Dumbbells/Barbell</li>
+        <li>Focus: Deltoids</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Lateral Raise.jpg" alt="Lateral Raise">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Side delts</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Front Raise.webp" alt="Front Raise">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Front delts</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Rear Delt Fly.webp" alt="Rear Delt Fly">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Rear delts</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="legs">
+  <h2>Leg Exercises</h2>
+  <div class="exercise-row">
+    <div class="exercise-card">
+      <img src="image/Squat.jpg" alt="Squat">
+      <ul>
+        <li>3 sets x 12 reps</li>
+        <li>Equipment: Barbell</li>
+        <li>Focus: Quads & Glutes</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Lunge.jpg" alt="Lunge">
+      <ul>
+        <li>3 sets x 12 reps per leg</li>
+        <li>Equipment: Dumbbells</li>
+        <li>Focus: Quads & Glutes</li>
+        <li>Rest: 60 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Leg Press.jpg" alt="Leg Press">
+      <ul>
+        <li>3 sets x 10 reps</li>
+        <li>Equipment: Machine</li>
+        <li>Focus: Quads</li>
+        <li>Rest: 90 sec</li>
+      </ul>
+    </div>
+    <div class="exercise-card">
+      <img src="image/Calf Raise.jpg" alt="Calf Raise">
+      <ul>
+        <li>3 sets x 15 reps</li>
+        <li>Equipment: Bodyweight/Dumbbells</li>
+        <li>Focus: Calves</li>
+        <li>Rest: 45 sec</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  &copy; 2025 Workout Guide | 
+  <a href="index.html" style="color: #facc15; text-decoration:none; font-weight:bold;">Back to Home</a>
+</footer>
+
+
+</body>
+</html>
